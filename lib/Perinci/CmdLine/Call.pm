@@ -52,7 +52,7 @@ sub call_cli_script {
     my $argv   = $args{argv} // [];
 
     my $res = IPC::System::Options::backtick(
-        {die=>1, log=>1},
+        {die=>0, log=>1},
         $script, "--json", "--no-naked-res", @$argv,
     );
 
