@@ -1,5 +1,11 @@
 Revision history for Perinci-CmdLine-Call
 
+0.04    2016-02-14 (PERLANCAR)
+
+	- [Bugfix] Don't die on non-zero exit code, we might legitimately
+	  want the result in those cases.
+
+
 0.03    2015-11-07 (PERLANCAR)
 
 	- No functional changes.
