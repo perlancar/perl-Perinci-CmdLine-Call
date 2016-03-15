@@ -1,5 +1,12 @@
 Revision history for Perinci-CmdLine-Call
 
+0.05    2016-03-16 (PERLANCAR)
+
+	- No functional changes.
+
+	- Replace JSON with JSON::MaybeXS.
+
+
 0.04    2016-02-14 (PERLANCAR)
 
 	- [Bugfix] Don't die on non-zero exit code, we might legitimately
