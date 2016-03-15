@@ -44,7 +44,7 @@ _
 };
 sub call_cli_script {
     require IPC::System::Options;
-    require JSON;
+    require JSON::MaybeXS;
 
     my %args = @_;
 
@@ -56,7 +56,7 @@ sub call_cli_script {
         $script, "--json", "--no-naked-res", @$argv,
     );
 
-    eval { $res = JSON::decode_json($res) };
+    eval { $res = JSON::MaybeXS::decode_json($res) };
     die if $@;
 
     $res;
