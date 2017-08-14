@@ -52,12 +52,14 @@ sub call_cli_script {
     my $argv   = $args{argv} // [];
 
     my $res = IPC::System::Options::readpipe(
-        {die=>0, log=>1},
+        {die=>0, log=>1,
+         capture_stdout=>\my $stdout, capture_stderr=>\my $stderr},
         $script, "--json", "--no-naked-res", @$argv,
     );
 
     eval { $res = JSON::MaybeXS::decode_json($res) };
-    die "Can't decode JSON: $@, res=<$res>" if $@;
+    die "Can't decode JSON: $@ (res=<$res>, exit code=".($? >> 8).
+        ", stdout=<$stdout>, stderr=<$stderr>)" if $@;
 
     $res;
 }
