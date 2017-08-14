@@ -57,7 +57,7 @@ sub call_cli_script {
     );
 
     eval { $res = JSON::MaybeXS::decode_json($res) };
-    die if $@;
+    die "Can't decode JSON: $@, res=<$res>" if $@;
 
     $res;
 }
