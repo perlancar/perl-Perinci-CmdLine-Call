@@ -1,17 +1,17 @@
-0.05    2016-03-16 (PERLANCAR)
+0.05    2016-03-16  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- Replace JSON with JSON::MaybeXS.
 
 
-0.04    2016-02-14 (PERLANCAR)
+0.04    2016-02-14  Released-By: PERLANCAR
 
 	- [Bugfix] Don't die on non-zero exit code, we might legitimately
 	  want the result in those cases.
 
 
-0.03    2015-11-07 (PERLANCAR)
+0.03    2015-11-07  Released-By: PERLANCAR
 
 	- No functional changes.
 
@@ -19,7 +19,7 @@
 	  version.
 
 
-0.02    2015-09-03 (PERLANCAR)
+0.02    2015-09-03  Released-By: PERLANCAR
 
 	- No functional changes.
 
@@ -28,6 +28,6 @@
 	  requirement.
 
 
-0.01     2015-05-15 (SHARYANTO)
+0.01     2015-05-15  Released-By: SHARYANTO
 
          - First release.
