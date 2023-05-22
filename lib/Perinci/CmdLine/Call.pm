@@ -1,14 +1,16 @@
 package Perinci::CmdLine::Call;
 
-# DATE
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
 
-require Exporter;
-our @ISA       = qw(Exporter);
+use Exporter qw(import);
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
+
 our @EXPORT_OK = qw(call_cli_script);
 
 our %SPEC;
