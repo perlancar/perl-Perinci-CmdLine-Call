@@ -27,7 +27,7 @@ features, e.g. support JSON output.
 This routine provides a convenience way to get a data structure from running a
 CLI command. It basically just calls the script with `--json` and
 `--no-naked-res` then decodes the JSON result so you get a data structure
-directly. Will die if output is not valid JSON.
+directly. Will return error 599 if output is not valid JSON.
 
 Other features might be added in the future, e.g. retry, custom configuration
 file, etc.
@@ -60,8 +60,7 @@ sub call_cli_script {
     );
 
     eval { $res = JSON::MaybeXS::decode_json($res) };
-    die "Can't decode JSON: $@ (res=<$res>, exit code=".($? >> 8).
-        ", stdout=<$stdout>, stderr=<$stderr>)" if $@;
+    return [599, "Can't decode JSON: $@ (res=<$res>, exit code=".($? >> 8).", stdout=<$stdout>, stderr=<$stderr>)"] if $@;
 
     $res;
 }
